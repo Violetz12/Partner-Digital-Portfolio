@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(145deg, #ffb6c1, #c0e0de);
+    background: linear-gradient(145deg, #ffb6c1, #8eafda);
     color: #fff;
     height: 100vh;
     display: flex;
@@ -59,7 +59,6 @@ body {
     align-items: center;
     flex-direction: column;
     height: 70vh;
-    background-image: url('https://source.unsplash.com/random/800x600/?dreamy');
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -76,43 +75,212 @@ body {
     font-size: 24px;
     font-weight: 300;
     margin-top: 10px;
+    margin-bottom: 15px;
 }
 
-button {
+.cta-button {
     padding: 10px 20px;
     font-size: 18px;
     border: none;
     background-color: #ffb6c1;
+    text-decoration: none;
     color: white;
     border-radius: 25px;
     margin-top: 20px;
     cursor: pointer;
     transition: transform 0.3s ease;
+    margin-bottom: 20px;
 }
 
-button:hover {
+.cta-button:hover {
     transform: scale(1.1);
 }
 
-/* Magic Section */
-.magic {
-    display: none;
-    padding: 50px;
-    background-color: rgba(0, 0, 0, 0.5);
+.about {
+    background-color: rgba(181, 204, 238, 0.2);
+    color: #fff;
+    padding: 50px 20px;
     text-align: center;
-    border-radius: 20px;
-    margin: 20px;
 }
 
-.magic-content h3 {
-    font-size: 36px;
+.about h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+.education {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.education .section-header h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.education-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.education-content li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* Projects Section */
+.projects {
+    padding: 50px 20px;
+    background-color: rgba(181, 204, 238, 0.1);
+}
+
+.projects .section-header h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.project-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-item {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 30%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h4 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    font-size: 1rem;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.project-info a {
+    color: #ffb6c1;
+    text-decoration: none;
     font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.project-info a:hover {
+    color: #fff;
+}
+
+/* Contact Section */
+.contact {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.contact-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
     color: #ffb6c1;
 }
 
-.magic-content p {
+.contact-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.contact-content .cta-button {
     font-size: 20px;
+    padding: 15px 30px;
+    background-color: #ffb6c1;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-content .cta-button:hover {
+    background-color: #ff8c94;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
     color: #fff;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .intro h2 {
+        font-size: 36px;
+    }
+
+    .intro p {
+        font-size: 20px;
+    }
+
+    .about h3 {
+        font-size: 2rem;
+    }
+
+    .about p {
+        font-size: 1rem;
+    }
+
+    .project-item {
+        width: 100%;
+    }
+
+    .contact-content .cta-button {
+        font-size: 18px;
+    }
 }
 
 /* Footer */

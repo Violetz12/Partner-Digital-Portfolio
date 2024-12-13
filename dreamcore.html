@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Dreamcore Aesthetic Homepage</title>
+    <title>Zhi Cheng's Portfolio</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&family=Roboto:wght@300;400&display=swap"
       rel="stylesheet"
@@ -12,34 +12,108 @@
     <link rel="stylesheet" href="dream.css" />
   </head>
   <body>
+    <!-- Navigation Bar -->
     <header>
       <nav class="navbar">
-        <h1>Dreamcore</h1>
+        <h1 class="logo">Zhi Cheng</h1>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
-    <section class="intro">
+
+    <!-- Hero Section -->
+    <section class="intro" id="home">
       <div class="intro-content">
-        <h2>Welcome to Dreamcore</h2>
-        <p>Your gateway to a world of surreal aesthetics.</p>
-        <button id="reveal-button">Reveal Magic</button>
+        <h2>Hi, I'm Zhi Cheng</h2>
+        <p>I'm a student studying Computer Science.</p>
+        <a href="#projects" class="cta-button">See My Work</a>
       </div>
     </section>
-    <section class="magic" id="magic">
-      <div class="magic-content">
-        <h3>Explore the Dreamworld</h3>
+    <br /><br />
+    <!-- About Me Section -->
+    <section class="about" id="about">
+      <div class="about-content">
+        <h3>About Me</h3>
+        <p>I'm a passionate student learning about</p>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="education">
+      <div class="section-header">
+        <h3>Education</h3>
+      </div>
+      <div class="education-content">
+        <ul>
+          <li>
+            <strong>Computer Science - University X</strong> (2018 - 2022)
+          </li>
+          <li>
+            <strong>Design for Digital Media - Institute Y</strong> (2017 -
+            2019)
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+      <div class="section-header">
+        <h3>My Projects</h3>
+      </div>
+      <div class="project-list">
+        <!-- Example Project 1 -->
+        <div class="project-item">
+          <img src="project1.jpg" alt="Project 1" />
+          <div class="project-info">
+            <h4>Project 1</h4>
+            <p>A brief description of the first project goes here.</p>
+            <a href="#">View Project</a>
+          </div>
+        </div>
+        <!-- Example Project 2 -->
+        <div class="project-item">
+          <img src="project2.jpg" alt="Project 2" />
+          <div class="project-info">
+            <h4>Project 2</h4>
+            <p>A brief description of the second project goes here.</p>
+            <a href="#">View Project</a>
+          </div>
+        </div>
+        <!-- Example Project 3 -->
+        <div class="project-item">
+          <img src="project3.jpg" alt="Project 3" />
+          <div class="project-info">
+            <h4>Project 3</h4>
+            <p>A brief description of the third project goes here.</p>
+            <a href="#">View Project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <div class="contact-content">
+        <h3>Contact Me</h3>
         <p>
-          Delve deeper into a world where reality and fantasy blend seamlessly.
+          Feel free to reach out to discuss potential collaborations, job
+          opportunities, or just to say hi!
         </p>
+        <a href="mailto:contact@zhicheng.com" class="cta-button"
+          >Get in Touch</a
+        >
       </div>
     </section>
+
+    <!-- Footer -->
     <footer>
-      <p>&copy; 2024 Dreamcore. All Rights Reserved.</p>
+      <p>&copy; 2024 Zhi Cheng. All Rights Reserved.</p>
     </footer>
-    <script src="script.js"></script>
   </body>
 </html>
