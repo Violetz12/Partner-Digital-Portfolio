@@ -276,6 +276,16 @@ nav {
     transform: translateZ(20px);
 }
 
+.team-card a {
+    text-decoration: none;
+    color: #555454;
+    transform: 0.3s;
+}
+
+.team-card a:hover {
+    color: #8a8a8a
+}
+
 .cta-button {
     background: linear-gradient(45deg, #ff69b4, #b469ff);
     color: white;
