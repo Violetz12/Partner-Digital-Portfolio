@@ -1,4 +1,3 @@
-/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +6,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(145deg, #ffb6c1, #8eafda);
+    background: url(bg.jpeg);
+    background-size: cover;
     color: #fff;
     height: 100vh;
     display: flex;
@@ -15,13 +15,12 @@ body {
     justify-content: space-between;
 }
 
-/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     margin: 20px;
 }
@@ -52,7 +51,6 @@ body {
     color: #ffb6c1;
 }
 
-/* Intro Section */
 .intro {
     display: flex;
     justify-content: center;
@@ -72,17 +70,32 @@ body {
 }
 
 .intro p {
-    font-size: 24px;
-    font-weight: 300;
-    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 200;
+    margin-top: -10px;
     margin-bottom: 15px;
+}
+
+.intro-content {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse; 
+}
+
+.image-container {
+    margin-left: 20px;
+}
+
+.image-container img {
+    width: 200px; 
+    border-radius: 50%;
 }
 
 .cta-button {
     padding: 10px 20px;
     font-size: 18px;
     border: none;
-    background-color: #ffb6c1;
+    background-color: #705cb9;
     text-decoration: none;
     color: white;
     border-radius: 25px;
@@ -97,10 +110,12 @@ body {
 }
 
 .about {
-    background-color: rgba(181, 204, 238, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
     color: #fff;
     padding: 50px 20px;
     text-align: center;
+    margin: 20px;
+    border-radius: 30px;
 }
 
 .about h3 {
@@ -118,7 +133,9 @@ body {
 .education {
     padding: 50px 20px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    border-radius: 30px;
 }
 
 .education .section-header h3 {
@@ -137,7 +154,6 @@ body {
     margin: 10px 0;
 }
 
-/* Projects Section */
 .projects {
     padding: 50px 20px;
     background-color: rgba(181, 204, 238, 0.1);
@@ -157,11 +173,11 @@ body {
 }
 
 .project-item {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     overflow: hidden;
     width: 30%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .project-item img {
@@ -196,22 +212,21 @@ body {
     color: #fff;
 }
 
-/* Contact Section */
 .contact {
-    padding: 50px 20px;
+    padding: 30px 20px;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.3);
 }
 
 .contact-content h3 {
     font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #ffb6c1;
+    margin-bottom: 15px;
+    color: #ffffff;
 }
 
 .contact-content p {
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .contact-content .cta-button {
@@ -226,21 +241,30 @@ body {
     background-color: #ff8c94;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
+.contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .contact-info li {
+    text-align: left;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+.contact-info a {
+    text-decoration: none;
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.4);
-    position: relative;
+    transition: 0.3s ;
 }
 
-footer p {
-    margin: 0;
+.contact-info a:hover {
+    color: #faa5f6;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
