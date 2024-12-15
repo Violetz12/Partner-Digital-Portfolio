@@ -208,6 +208,11 @@ button {
     bottom: 0;
 }
 
+.project-info a {
+    text-decoration: none;
+    color: #333;
+}
+
 .contact {
     padding: 6rem 2rem;
     background: rgba(255, 255, 255, 0.9);
