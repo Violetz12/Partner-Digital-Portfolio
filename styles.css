@@ -136,6 +136,10 @@ nav {
     }
 }
 
+button {
+    cursor: pointer;
+}
+
 .achievements {
     padding: 6rem 2rem;
     background: rgba(255, 255, 255, 0.9);

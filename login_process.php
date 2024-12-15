@@ -13,6 +13,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     } else {
         
         echo "Invalid username or password.";
+        header("Location: login fail.html");
     }
 } else {
     
