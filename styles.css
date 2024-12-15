@@ -311,3 +311,69 @@ button {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(255, 105, 180, 0.5);
 }
+
+.about {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #e5b3ff, #ffd6e7);
+    overflow: hidden;
+}
+
+.about-content {
+    max-width: 800px;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(255, 105, 180, 0.2);
+}
+
+.about-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, #ff69b4, #b469ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: var(--text);
+}
+
+.about-features {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.feature-card {
+    flex: 1;
+    margin: 0 1rem;
+    padding: 1.5rem;
+    background: var(--secondary);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-card h3 {
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+}
