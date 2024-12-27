@@ -151,6 +151,39 @@
             <button type="submit" class="cta-button">Login</button>
         </form>
     </section>
+
+    <h3>Test place</h3>
+
+    <label for="usernameInput">Username:</label>
+    <input type="text" id="usernameInput">
+
+    <label for="passwordInput">Password:</label>
+    <input type="password" id="passwordInput">
+
+    <button id="submitBtn">Submit</button>
+
+    <script>
+    document.getElementById('submitBtn').addEventListener('click', () => {
+        const username = document.getElementById('usernameInput').value;
+        const password = document.getElementById('passwordInput').value;
+        
+        const formData = new FormData();
+        formData.append('username', username);
+        formData.append('password', password);
+
+        fetch('https://violin.lovestoblog.com/signup_process.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+    </script>
     <script>
         VanillaTilt.init(document.querySelectorAll(".team-card"), {
             max: 10,
