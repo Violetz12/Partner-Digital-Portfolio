@@ -6,6 +6,7 @@
     <title>Violin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
 </head>
@@ -23,24 +24,20 @@
     </header>
 
     <section class="hero">
-        <canvas id="heroCanvas"></canvas>
+        <div id="particles"></div>
         <h1 class="animate__animated animate__fadeInDown">Our Team</h1>
         <p class="animate__animated animate__fadeIn animate__delay-1s">Creating digital wonders together ✨</p>
-        <br />
-        <button class="cta-button animate__animated animate__bounceIn animate__delay-2s"> Join the Magic</button>
     </section>
 
     <section id="team" class="team-grid">
         <div class="team-card" data-tilt data-tilt-max="10">
-            <img src="Candy.jpg" alt="Team Member" class="team-image">
+            <img src="../images/Candy.jpg" alt="Team Member" class="team-image">
             <h3>Lim Xin Ying</h3>
-            <p>Code Captain</p>
             <a href="#">Portfolio</a>
         </div>
         <div class="team-card" data-tilt data-tilt-max="10">
-            <img src="Zhi Cheng.jpg" alt="Team Member" class="team-image">
+            <img src="../images/Zhi Cheng.jpg" alt="Team Member" class="team-image">
             <h3>Eng Zhi Cheng</h3>
-            <p>Backup Developer</p>
             <a href="dreamcore.html">Portfolio</a>
         </div>
     </section>
@@ -72,7 +69,7 @@
         <br/>
         <div class="project-grid">
             <div class="project-card" style="width: 376px;">
-                <img src="Spotify CLone.png">
+                <img src="../images/Spotify CLone.png">
                 <div class="project-info">
                     <h3>Daily Dose of Music</h3>
                     <a href="about.html">A website that plays music</a>
@@ -86,21 +83,21 @@
         <br/>
         <div class="project-grid">
             <div class="project-card">
-                <img src="Aries.png" alt="Project">
+                <img src="../images/Aries.png" alt="Project">
                 <div class="project-info">
                     <h3>Aries</h3>
                     <p>A website that teaches users about exoplanets</p>
                 </div>
             </div>
             <div class="project-card">
-                <img src="Kolor.png" alt="Project">
+                <img src="../images/Kolor.png" alt="Project">
                 <div class="project-info">
                     <h3>Kolor: Fan Edition</h3>
                     <p>A clone website of Kolor</p>
                 </div>
             </div>
             <div class="project-card">
-                <img src="Lululemon.png" alt="Project">
+                <img src="../images/Lululemon.png" alt="Project">
                 <div class="project-info">
                     <h3>Lululemon Clone</h3>
                     <p>A clone website of Lululemon</p>
@@ -217,102 +214,116 @@
 
         observer.observe(document.querySelector('.achievements'));
 
-        // Canvas setup for geometric pattern
-        const canvas = document.getElementById('heroCanvas');
-        const ctx = canvas.getContext('2d');
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        // Particle class
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 2;
-                this.vy = (Math.random() - 0.5) * 2;
-                this.radius = 2;
-            }
-
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-
-                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-            }
-
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(255, 105, 180, 0.5)';
-                ctx.fill();
-            }
-        }
-
-        // Setup
-        const particles = [];
-        const particleCount = 100;
-        let mouse = { x: null, y: null, radius: 150 };
-
-        for (let i = 0; i < particleCount; i++) {
-            particles.push(new Particle());
-        }
-
-        // Mouse move handler
-        canvas.addEventListener('mousemove', (e) => {
-            mouse.x = e.x;
-            mouse.y = e.y + 130;
-        });
-
-        // Animation
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            particles.forEach(particle => {
-                particle.update();
-                particle.draw();
-
-                // Connect particles
-                particles.forEach(otherParticle => {
-                    const dx = particle.x - otherParticle.x;
-                    const dy = particle.y - otherParticle.y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-
-                    if (distance < 100) {
-                        ctx.beginPath();
-                        ctx.strokeStyle = `rgba(255, 105, 180, ${1 - distance/100})`;
-                        ctx.lineWidth = 1;
-                        ctx.moveTo(particle.x, particle.y);
-                        ctx.lineTo(otherParticle.x, otherParticle.y);
-                        ctx.stroke();
+        particlesJS('particles', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
                     }
-                });
-
-                // Connect with mouse
-                if (mouse.x) {
-                    const dx = particle.x - mouse.x;
-                    const dy = particle.y - mouse.y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-
-                    if (distance < mouse.radius) {
-                        ctx.beginPath();
-                        ctx.strokeStyle = `rgba(255, 105, 180, ${1 - distance/mouse.radius})`;
-                        ctx.lineWidth = 1;
-                        ctx.moveTo(particle.x, particle.y);
-                        ctx.lineTo(mouse.x, mouse.y);
-                        ctx.stroke();
+                },
+                "color": {
+                    "value": "#ff69b4"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                    "image": {
+                        "src": "img/github.svg",
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ff69b4",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
                     }
                 }
-            });
-
-            requestAnimationFrame(animate);
-        }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 200,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
 
         animate();
     </script>
